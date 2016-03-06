@@ -76,7 +76,7 @@
         $(this.options.containerSelector).find('*[type=submit]').hide();
 
         this.actionInputSelector.on('change', this.selectedActionChangedHandler.bind(this));
-        this.allElementsToggleButton.on('ifChecked ifUnchecked', this.allElementsChangedHandler.bind(this));
+        this.allElementsToggleButton.on('change', this.allElementsChangedHandler.bind(this));
     };
 
     S2A.batchActionsManager.prototype = {
@@ -104,9 +104,7 @@
         },
 
         allElementsChangedHandler: function(evt){
-            $(this.options.elementSelector)
-                .prop('checked', $(evt.currentTarget).is(':checked'))
-                .iCheck('update');
+            $(this.options.elementSelector).prop('checked', $(evt.currentTarget).is(':checked'));
         },
 
         isValidActionSelected: function(actionValue){
@@ -142,7 +140,7 @@
     $('.nav-tabs *[data-toggle="tab"]:first').click();
     
     // Display number of errors on tabs
-	$('.nav.nav-tabs li').each(function(i){
+    $('.nav.nav-tabs li').each(function(i){
         $(this).find('a span.label-danger').remove();
         var invalid_items = $('fieldset'+$(this).find('a:first').data('target')).find('.has-error');
         if (invalid_items.length > 0) {
