@@ -11,6 +11,7 @@
         "jquery": "~1",
         "bootstrap": "~3",
         "font-awesome": "~4",
+        "iCheck": "~1",
         "slimScroll": "~1",
         "jquery-resize": "v1.1",
         "html5shiv": "~3",

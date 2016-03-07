@@ -104,7 +104,11 @@
         },
 
         allElementsChangedHandler: function(evt){
-            $(this.options.elementSelector).prop('checked', $(evt.currentTarget).is(':checked'));
+            var $element = $(this.options.elementSelector);
+            $element.prop('checked', $(evt.currentTarget).is(':checked'));
+            if(typeof($element.iCheck) == "function"){
+                $element.iCheck('update');
+            }
         },
 
         isValidActionSelected: function(actionValue){
